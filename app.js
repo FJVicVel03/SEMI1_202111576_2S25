@@ -7,11 +7,15 @@ app.get('/check', (req, res) => {
 
 app.get('/info', (req, res) => {
     res.json({
-        api: "API Node.js",
-        version: "1.0",
-        author: "Tu Nombre",
-        language: "JavaScript",
-        framework: "Express"
+        "Instancia": "Máquina 1 - API 1 (Express)",
+        "Curso": "Seminario de Sistemas 1 A",
+        "Grupo": "Grupo 5"
+        // Uncomment and modify the following lines as needed
+        // "api": "API Node.js",
+        // "version": "1.0",
+        // "author": "Tu Nombre",
+        // "language": "JavaScript",
+        // "framework": "Express"
     });
 });
 

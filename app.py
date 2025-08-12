@@ -9,11 +9,9 @@ def check():
 @app.route('/info')
 def info():
     return jsonify({
-        "api": "Fernando Vicente 202111576",
-        "version": "1.0",
-        "author": "Tu Nombre",
-        "language": "Python",
-        "framework": "Flask"
+        "Instancia": "Máquina 1 - API 1 (Flask)",
+        "Curso": "Seminario de Sistemas 1 A",
+        "Grupo": "Grupo 5"
     })
 
 if __name__ == '__main__':
