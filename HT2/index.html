@@ -12,7 +12,7 @@
 
     <script>
         document.getElementById('getDataButton').addEventListener('click', function() {
-            fetch('http://172.17.0.5/get-data')  // Usando la IP privada  // Cambia por tu IP del balanceador de carga
+           fetch('http://4.174.228.149/get-data')  // Cambia por tu IP pública del equilibrador de carga
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('response').textContent = JSON.stringify(data, null, 2);

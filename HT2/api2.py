@@ -1,11 +1,13 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Esto habilita CORS para todas las rutas
 
 @app.route('/get-data', methods=['GET'])
 def get_data():
     data = {
-        "api_name": "API 2",  # Este valor lo puedes personalizar
+        "api_name": "API 2",
         "data": {
             "id": 1,
             "nombre": "Grupo 5 - Semi 1 - Api 2"
