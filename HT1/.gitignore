@@ -1,0 +1,6 @@
+//ignorar node_modules
+node_modules/
+//ignorar archivos de log
+*.log
+//ignorar archivos de entorno
+.env

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Sitio Web - Tarea 2</title>
+    <style>
+        body {
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            background-color: #0a0a2e;
+            color: #00ff9f;
+            background-image: 
+                linear-gradient(rgba(10, 10, 46, 0.9), rgba(10, 10, 46, 0.9)),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 159, 0.1) 2px, rgba(0, 255, 159, 0.1) 4px);
+        }
+
+        h1 {
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            color: #00ffff;
+            text-shadow: 0 0 8px #00ffff;
+            margin-top: 40px;
+        }
+
+        video {
+            border: 3px solid #ff00ff;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 0 20px #ff00ff;
+            border-radius: 5px;
+        }
+
+        .container {
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #00ff9f;
+            border-radius: 10px;
+            box-shadow: 0 0 15px #00ff9f;
+        }
+
+        button {
+            background: transparent;
+            color: #00ffff;
+            border: 2px solid #00ffff;
+            padding: 10px 25px;
+            margin-top: 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            border-radius: 5px;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        button:hover {
+            background: #00ffff;
+            color: #0a0a2e;
+            box-shadow: 0 0 20px #00ffff;
+        }
+
+        p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-shadow: 0 0 5px #00ff9f;
+        }
+
+        strong {
+            color: #ff00ff;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Bienvenido a mi Sitio Web</h1>
+    <p><strong>Nombre:</strong> Fernando José Vicente Velásquez <br> <strong>Carnet:</strong> 202111576</p>
+
+    <div class="container">
+        <h2>Acceso a la Cámara Web</h2>
+        <video id="video" autoplay></video>
+        <br>
+        <button onclick="startCamera()">Iniciar Cámara</button>
+    </div>
+
+    <script>
+        function startCamera() {
+            const videoElement = document.getElementById('video');
+
+            // Verifica si el navegador soporta la API de la cámara
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function(stream) {
+                        videoElement.srcObject = stream;
+                    })
+                    .catch(function(error) {
+                        alert("No se pudo acceder a la cámara: " + error.message);
+                    });
+            } else {
+                alert("Tu navegador no soporta el acceso a la cámara.");
+            }
+        }
+    </script>
+</body>
+</html>
